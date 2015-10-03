@@ -1,23 +1,25 @@
-﻿Build started 03.10.2015 0:37:11.
-     1>Project "F:\BitFields_Set\mp2-lab1-set\sln\vc10\bitfield\bitfield.vcxproj" on node 2 (rebuild target(s)).
+﻿Сборка начата 04.10.2015 0:37:07.
+     1>Проект "F:\BitFields_Set\mp2-lab1-set\sln\vc10\bitfield\bitfield.vcxproj" в узле 3 (целевые объекты Rebuild).
      1>_PrepareForClean:
-         Deleting file "Debug\bitfield.lastbuildstate".
+         Файл "Debug\bitfield.tlog\bitfield.lastbuildstate" удаляется.
        InitializeBuildStatus:
-         Creating "Debug\bitfield.unsuccessfulbuild" because "AlwaysCreate" was specified.
+         Создание "Debug\bitfield.tlog\unsuccessfulbuild", так как было задано "AlwaysCreate".
        ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I../../../include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\..\src\tbitfield.cpp ..\..\..\src\tset.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I../../../include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\bitfield.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\..\src\tbitfield.cpp ..\..\..\src\tset.cpp
          tset.cpp
          tbitfield.cpp
-         Generating Code...
+         Создание кода...
        Lib:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:"F:\BitFields_Set\mp2-lab1-set\sln\vc10\Debug\bitfield.lib" /NOLOGO Debug\tbitfield.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\Lib.exe /OUT:"F:\BitFields_Set\mp2-lab1-set\sln\vc10\Debug\bitfield.lib" /NOLOGO Debug\tbitfield.obj
          Debug\tset.obj
          bitfield.vcxproj -> F:\BitFields_Set\mp2-lab1-set\sln\vc10\Debug\bitfield.lib
+       CopyFilesToOutputDirectory:
+         Копирование файла из "Debug\bitfield.pdb" в "F:\BitFields_Set\mp2-lab1-set\sln\vc10\Debug\bitfield.pdb".
        FinalizeBuildStatus:
-         Deleting file "Debug\bitfield.unsuccessfulbuild".
-         Touching "Debug\bitfield.lastbuildstate".
-     1>Done Building Project "F:\BitFields_Set\mp2-lab1-set\sln\vc10\bitfield\bitfield.vcxproj" (rebuild target(s)).
+         Файл "Debug\bitfield.tlog\unsuccessfulbuild" удаляется.
+         Обращение к "Debug\bitfield.tlog\bitfield.lastbuildstate".
+     1>Сборка проекта "F:\BitFields_Set\mp2-lab1-set\sln\vc10\bitfield\bitfield.vcxproj" завершена (целевые объекты Rebuild).
 
-Build succeeded.
+Сборка успешно завершена.
 
-Time Elapsed 00:00:01.12
+Затраченное время: 00:00:01.62

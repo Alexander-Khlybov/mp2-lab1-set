@@ -1,41 +1,28 @@
-﻿Build started 03.10.2015 0:37:16.
-     1>Project "F:\BitFields_Set\mp2-lab1-set\sln\vc10\test_bitfield\test_bitfield.vcxproj" on node 3 (rebuild target(s)).
+﻿Сборка начата 04.10.2015 0:37:11.
+     1>Проект "F:\BitFields_Set\mp2-lab1-set\sln\vc10\test_bitfield\test_bitfield.vcxproj" в узле 3 (целевые объекты Rebuild).
      1>_PrepareForClean:
-         Deleting file "Debug\test_bitfield.lastbuildstate".
+         Файл "Debug\test_bitfield.tlog\test_bitfield.lastbuildstate" удаляется.
        InitializeBuildStatus:
-         Creating "Debug\test_bitfield.unsuccessfulbuild" because "AlwaysCreate" was specified.
+         Создание "Debug\test_bitfield.tlog\unsuccessfulbuild", так как было задано "AlwaysCreate".
        ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I../../../gtest /I../../../include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\..\test\test_main.cpp ..\..\..\test\test_tbitfield.cpp ..\..\..\test\test_tset.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I../../../gtest /I../../../include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\..\test\test_main.cpp ..\..\..\test\test_tbitfield.cpp ..\..\..\test\test_tset.cpp
          test_tset.cpp
          test_tbitfield.cpp
          test_main.cpp
-         Generating Code...
-       ManifestResourceCompile:
-         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\test_bitfield.exe.embed.manifest.res" Debug\test_bitfield_manifest.rc 
+         Создание кода...
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\BitFields_Set\mp2-lab1-set\sln\vc10\Debug\test_bitfield.exe" /INCREMENTAL /NOLOGO /LIBPATH:../Debug gtest.lib bitfield.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\test_bitfield.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"F:\BitFields_Set\mp2-lab1-set\sln\vc10\Debug\test_bitfield.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\BitFields_Set\mp2-lab1-set\sln\vc10\Debug\test_bitfield.lib" /MACHINE:X86 Debug\test_bitfield.exe.embed.manifest.res
-         Debug\test_main.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\BitFields_Set\mp2-lab1-set\sln\vc10\Debug\test_bitfield.exe" /INCREMENTAL /NOLOGO /LIBPATH:../Debug gtest.lib bitfield.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"F:\BitFields_Set\mp2-lab1-set\sln\vc10\Debug\test_bitfield.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\BitFields_Set\mp2-lab1-set\sln\vc10\Debug\test_bitfield.lib" /MACHINE:X86 /SAFESEH Debug\test_main.obj
          Debug\test_tbitfield.obj
          Debug\test_tset.obj
          "F:\BitFields_Set\mp2-lab1-set\sln\vc10\Debug\gtest.lib"
          "F:\BitFields_Set\mp2-lab1-set\sln\vc10\Debug\bitfield.lib"
-       Manifest:
-         Deleting file "Debug\test_bitfield.exe.embed.manifest".
-         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\test_bitfield.exe.embed.manifest" /manifest Debug\test_bitfield.exe.intermediate.manifest
-         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\test_bitfield.exe.embed.manifest.res" Debug\test_bitfield_manifest.rc 
-       LinkEmbedManifest:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\BitFields_Set\mp2-lab1-set\sln\vc10\Debug\test_bitfield.exe" /INCREMENTAL /NOLOGO /LIBPATH:../Debug gtest.lib bitfield.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\test_bitfield.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"F:\BitFields_Set\mp2-lab1-set\sln\vc10\Debug\test_bitfield.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\BitFields_Set\mp2-lab1-set\sln\vc10\Debug\test_bitfield.lib" /MACHINE:X86 Debug\test_bitfield.exe.embed.manifest.res
-         Debug\test_main.obj
-         Debug\test_tbitfield.obj
-         Debug\test_tset.obj
-         "F:\BitFields_Set\mp2-lab1-set\sln\vc10\Debug\gtest.lib"
-         "F:\BitFields_Set\mp2-lab1-set\sln\vc10\Debug\bitfield.lib"
+     1>test_main.obj : warning LNK4075: не учитывается "/EDITANDCONTINUE" из-за спецификации "/SAFESEH"
          test_bitfield.vcxproj -> F:\BitFields_Set\mp2-lab1-set\sln\vc10\Debug\test_bitfield.exe
        FinalizeBuildStatus:
-         Deleting file "Debug\test_bitfield.unsuccessfulbuild".
-         Touching "Debug\test_bitfield.lastbuildstate".
-     1>Done Building Project "F:\BitFields_Set\mp2-lab1-set\sln\vc10\test_bitfield\test_bitfield.vcxproj" (rebuild target(s)).
+         Файл "Debug\test_bitfield.tlog\unsuccessfulbuild" удаляется.
+         Обращение к "Debug\test_bitfield.tlog\test_bitfield.lastbuildstate".
+     1>Сборка проекта "F:\BitFields_Set\mp2-lab1-set\sln\vc10\test_bitfield\test_bitfield.vcxproj" завершена (целевые объекты Rebuild).
 
-Build succeeded.
+Сборка успешно завершена.
 
-Time Elapsed 00:00:03.93
+Затраченное время: 00:00:04.15
