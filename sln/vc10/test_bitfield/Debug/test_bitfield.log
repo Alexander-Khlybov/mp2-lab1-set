@@ -1,5 +1,5 @@
-﻿Сборка начата 04.10.2015 0:37:11.
-     1>Проект "F:\BitFields_Set\mp2-lab1-set\sln\vc10\test_bitfield\test_bitfield.vcxproj" в узле 3 (целевые объекты Rebuild).
+﻿Сборка начата 04.10.2015 1:55:42.
+     1>Проект "F:\BitFields_Set\mp2-lab1-set\sln\vc10\test_bitfield\test_bitfield.vcxproj" в узле 2 (целевые объекты Rebuild).
      1>_PrepareForClean:
          Файл "Debug\test_bitfield.tlog\test_bitfield.lastbuildstate" удаляется.
        InitializeBuildStatus:
@@ -25,4 +25,4 @@
 
 Сборка успешно завершена.
 
-Затраченное время: 00:00:04.15
+Затраченное время: 00:00:04.54

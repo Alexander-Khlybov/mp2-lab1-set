@@ -9,6 +9,9 @@
 
 TBitField::TBitField(int len)
 {
+    if (len < 0)
+        throw
+        length_error("Negative length");
     BitLen = len;
     MemLen = (len + 15) >> 4;
     pMem = new TELEM[MemLen];
@@ -33,12 +36,15 @@ TBitField::~TBitField()
 
 int TBitField::GetMemIndex(const int n) const // индекс Мем для бита n
 {
+    if ((n < 0) || (n >= BitLen))
+        throw
+        out_of_range("Out of range");
     return n >> 4;
 }
 
 TELEM TBitField::GetMemMask(const int n) const // битовая маска для бита n
 {
-    return 1 << (n & 15);
+    return 1 << (n);
 }
 
 // доступ к битам битового поля
@@ -50,17 +56,26 @@ int TBitField::GetLength(void) const // получить длину (к-во б�
 
 void TBitField::SetBit(const int n) // установить бит
 {
+    if ((n < 0) || (n >= BitLen))
+        throw
+        out_of_range("Out of range");
     pMem[GetMemIndex(n)] |= GetMemMask(n);
 }
 
 void TBitField::ClrBit(const int n) // очистить бит
 {
+    if ((n < 0) || (n >= BitLen))
+        throw
+        out_of_range("Out of range");
     TELEM k = ~GetMemMask(n);
     pMem[GetMemIndex(n)] &= k;
 }
 
 int TBitField::GetBit(const int n) const // получить значение бита
 {
+    if ((n < 0) || (n >= BitLen))
+        throw
+        out_of_range("Out of range");
     return (pMem[GetMemIndex(n)] & GetMemMask(n)) >> n;
 }
 
@@ -86,20 +101,23 @@ int TBitField::operator==(const TBitField &bf) const // сравнение
     if (BitLen != bf.BitLen)
         tmp = 0;
     else
+    {
         for (int i = 0; i < MemLen; i++)
             if (pMem[i] != bf.pMem[i])
             {
                 tmp = 0;
                 break;
             }
+    }
+    
     return tmp;
 }
 
 int TBitField::operator!=(const TBitField &bf) const // сравнение
 {
     int tmp = 1;
-    if (BitLen == bf.BitLen)
-        tmp = 0;
+    if (BitLen != bf.BitLen)
+        tmp = 1;
     else
     {
         int k = 0;
@@ -110,7 +128,7 @@ int TBitField::operator!=(const TBitField &bf) const // сравнение
             tmp = 0;
     }
 
-  return 0;
+  return tmp;
 }
 
 TBitField TBitField::operator|(const TBitField &bf) // операция "или"
