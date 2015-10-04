@@ -1,9 +1,9 @@
-﻿Сборка начата 04.10.2015 1:55:42.
+﻿Сборка начата 04.10.2015 3:15:55.
      1>Проект "F:\BitFields_Set\mp2-lab1-set\sln\vc10\sample_prime_numbers\sample_prime_numbers.vcxproj" в узле 3 (целевые объекты Rebuild).
      1>_PrepareForClean:
          Файл "Debug\sample_p.5D0218F2.tlog\sample_prime_numbers.lastbuildstate" удаляется.
        InitializeBuildStatus:
-         Создание "Debug\sample_p.5D0218F2.tlog\unsuccessfulbuild", так как было задано "AlwaysCreate".
+         Обращение к "Debug\sample_p.5D0218F2.tlog\unsuccessfulbuild".
        ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I../../../include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\..\samples\sample_prime_numbers.cpp
          sample_prime_numbers.cpp
@@ -19,4 +19,4 @@
 
 Сборка успешно завершена.
 
-Затраченное время: 00:00:01.48
+Затраченное время: 00:00:01.54

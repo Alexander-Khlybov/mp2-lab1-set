@@ -1,9 +1,9 @@
-﻿Сборка начата 04.10.2015 1:55:42.
+﻿Сборка начата 04.10.2015 3:15:55.
      1>Проект "F:\BitFields_Set\mp2-lab1-set\sln\vc10\test_bitfield\test_bitfield.vcxproj" в узле 2 (целевые объекты Rebuild).
      1>_PrepareForClean:
          Файл "Debug\test_bitfield.tlog\test_bitfield.lastbuildstate" удаляется.
        InitializeBuildStatus:
-         Создание "Debug\test_bitfield.tlog\unsuccessfulbuild", так как было задано "AlwaysCreate".
+         Обращение к "Debug\test_bitfield.tlog\unsuccessfulbuild".
        ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I../../../gtest /I../../../include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\..\test\test_main.cpp ..\..\..\test\test_tbitfield.cpp ..\..\..\test\test_tset.cpp
          test_tset.cpp
@@ -25,4 +25,4 @@
 
 Сборка успешно завершена.
 
-Затраченное время: 00:00:04.54
+Затраченное время: 00:00:04.26
