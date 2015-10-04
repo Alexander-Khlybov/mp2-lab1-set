@@ -79,29 +79,33 @@ int TSet::operator!=(const TSet &s) const // сравнение
 
 TSet TSet::operator+(const TSet &s) // объединение
 {
-    return s;
+    TSet b(BitField | s.BitField);
+    return b;
 }
 
 TSet TSet::operator+(const int Elem) // объединение с элементом
 {
-    TSet s(3);
+    TSet s(BitField);
+    s.InsElem(Elem);
     return s;
 }
 
 TSet TSet::operator-(const int Elem) // разность с элементом
 {
-    TSet s(3);
+    TSet s(BitField);
+    s.DelElem(Elem);
     return s;
 }
 
 TSet TSet::operator*(const TSet &s) // пересечение
 {
-    return s;
+    TSet b(BitField & s.BitField);
+    return b;
 }
 
 TSet TSet::operator~(void) // дополнение
 {
-    TSet s(3);
+    TSet s(~BitField);
     return s;
 }
 
@@ -109,10 +113,38 @@ TSet TSet::operator~(void) // дополнение
 
 istream &operator>>(istream &istr, TSet &s) // ввод
 {
+    int tmp;
+    char c;
+    do
+    {
+        istr >> c;
+    } while (c != '{');
+
+    do
+    {
+        istr >> tmp;
+        s.InsElem(tmp);
+        do
+        {
+            istr >> c;
+        } while ((c != ',') && (c != '}'));
+    } while (c != '}');
     return istr;
 }
 
 ostream& operator<<(ostream &ostr, const TSet &s) // вывод
 {
+    char c = ' ';
+    ostr << "{";
+    int n = s.GetMaxPower();
+    for (int i = 0; i < n; i++)
+    {
+        if (s.IsMember(i))
+        {
+            ostr << c << ' ' << i;
+            c = ',';
+        }
+    }
+    ostr << " }";
     return ostr;
 }
