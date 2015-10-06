@@ -13,7 +13,7 @@ TBitField::TBitField(int len)
         throw                                        // выбрасываем
         length_error("Negative length");             // ошибку из функции 
     BitLen = len;                                    //
-    MemLen = (len + 15) >> 4;                        // pMem[i] содержит 4 байта (16 бит).
+    MemLen = (len + 15) >> sizeof(TELEM);                        //
     pMem = new TELEM[MemLen];                        //
     for (int i = 0; i < MemLen; i++)                 //
         pMem[i] = 0;                                 //
@@ -39,12 +39,12 @@ int TBitField::GetMemIndex(const int n) const // индекс Мем для би
     if ((n < 0) || (n >= BitLen))                    // если n не принадлежит
         throw                                        // полуинтервалу [0, BitLen)
         out_of_range("Out of range");                // выбрасываем из функции ошибку
-    return n >> 4;                                   // 
+    return n >> sizeof(TELEM);                                   // 
 }                                                    //
 
 TELEM TBitField::GetMemMask(const int n) const // битовая маска для бита n
 {                                                    //
-    return 1 << (n);                                 // сдвиг 1 на n битов влево
+    return 1 << (n % (sizeof(TELEM) * 8));                                 // сдвиг 1 на n битов влево
 }                                                    //
 
 // доступ к битам битового поля
@@ -76,7 +76,7 @@ int TBitField::GetBit(const int n) const // получить значение б
     if ((n < 0) || (n >= BitLen))                    // если n не принадлежит
         throw                                        // полуинтервалу [0, BitLen)
         out_of_range("Out of range");                // выбрасываем из функции ошибку
-    return (pMem[GetMemIndex(n)] & GetMemMask(n)) >> n;
+    return (pMem[GetMemIndex(n)] & GetMemMask(n)) >> (n % (sizeof(TELEM) * 8));
 }                                                    //
 
 // битовые операции
@@ -97,36 +97,22 @@ TBitField& TBitField::operator=(const TBitField &bf) // присваивание
 
 int TBitField::operator==(const TBitField &bf) const // сравнение
 {                                                    //
-    int tmp = 1;                                     //
-    if (BitLen == bf.BitLen)                         // если длины битовых полей равны
-    {                                                //
-        for (int i = 0; i < MemLen; i++)             // 
-            if (pMem[i] != bf.pMem[i])               // проводим проверку равенства элементов массивов
-            {                                        //
-                tmp = 0;                             //
-                break;                               //
-            }                                        //
-    }                                                //
-    else                                             //
-        tmp = 0;                                     // если длина битовых полей не равны, однозначно имеем разницу
-    return tmp;                                      //
+    if (BitLen != bf.BitLen)                         //
+        return 0;                                    //
+    for (int i = 0; i < MemLen; i++)                 //
+        if (pMem[i] != bf.pMem[i])                   //
+            return 0;                                //
+    return 1;                                        //
 }                                                    //
 
 int TBitField::operator!=(const TBitField &bf) const // сравнение
 {                                                    //
-    int tmp = 1;                                     //
     if (BitLen != bf.BitLen)                         //
-        tmp = 1;                                     //
-    else                                             //
-    {                                                //
-        int k = 0;                                   //
-        for (int i = 0; i < MemLen; i++)             //
-            if (pMem[i] == bf.pMem[i])               //
-                k++;                                 //
-        if (k == MemLen)                             //
-            tmp = 0;                                 //
-    }                                                //
-  return tmp;                                        //
+        return 1;                                    //
+    for (int i = 0; i < MemLen; i++)                 //
+        if (pMem[i] != bf.pMem[i])                   //
+            return 1;                                //
+    return 0;                                        //
 }                                                    //
 
 TBitField TBitField::operator|(const TBitField &bf) // операция "или"

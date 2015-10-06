@@ -61,20 +61,18 @@ TSet& TSet::operator=(const TSet &s) // присваивание
 
 int TSet::operator==(const TSet &s) const // сравнение
 {                                                           //
-    int tmp = 1;                                            //
     if (MaxPower != s.GetMaxPower())                        //
-        tmp = 0;                                            //
+        return 0;                                           //
     else if (BitField != s.BitField)                        //
-        tmp = 0;                                            //
-    return tmp;                                             //
+        return 0;                                           //
+    return 1;                                               //
 }                                                           //
 
 int TSet::operator!=(const TSet &s) const // сравнение
 {                                                           //
-    int tmp = 1;                                            //
     if (BitField == s.BitField)                             //
-        tmp = 0;                                            //
-    return tmp;                                             //
+        return 0;                                           //
+    return 1;                                               //
 }
 
 TSet TSet::operator+(const TSet &s) // объединение
