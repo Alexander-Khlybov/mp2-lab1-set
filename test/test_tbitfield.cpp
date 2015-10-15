@@ -17,7 +17,6 @@ TEST(TBitField, can_get_length)
 TEST(TBitField, new_bitfield_is_set_to_zero)
 {
   TBitField bf(100);
-
   int sum = 0;
   for (int i = 0; i < bf.GetLength(); i++)
   {
@@ -218,11 +217,9 @@ TEST(TBitField, and_operator_applied_to_bitfields_of_non_equal_size)
   bf2.SetBit(3);
 
   // expBf = 00010
-  expBf.SetBit(1);
-  expBf.SetBit(2);
   expBf.SetBit(3);
 
-  EXPECT_EQ(expBf, bf1 | bf2);
+  EXPECT_EQ(expBf, bf1 & bf2);
 }
 
 TEST(TBitField, can_invert_bitfield)
