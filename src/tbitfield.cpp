@@ -8,7 +8,6 @@
 #include "tbitfield.h"
 
 #define BpMem (sizeof(TELEM) * 8)
-#define ML (n / BpMem + (n % BpMem == 0) ? 0 : 1)
 
 TBitField::TBitField(int len)
 {
@@ -16,8 +15,7 @@ TBitField::TBitField(int len)
         throw
         length_error("Negative length");
     BitLen = len;
-    int k = (len % BpMem == 0) ? 0 : 1;
-    MemLen = len / BpMem + k;
+    MemLen = (len + BpMem - 1) / BpMem;
     pMem = new TELEM[MemLen];
     for (int i = 0; i < MemLen; i++) {
         pMem[i] = 0;
@@ -113,15 +111,15 @@ int TBitField::operator==(const TBitField &bf) const // сравнение
 }
 
 int TBitField::operator!=(const TBitField &bf) const // сравнение
-{                                                    //
-    if (BitLen != bf.BitLen)                         //
-        return 1;                                    //
+{
+    if (BitLen != bf.BitLen)
+        return 1;
     
-    for (int i = 0; i < MemLen; i++)                 //
-        if (pMem[i] != bf.pMem[i])                   //
-            return 1;                                //
-    return 0;                                        //
-}                                                    //
+    for (int i = 0; i < MemLen; i++)
+        if (pMem[i] != bf.pMem[i])
+            return 1;
+    return 0;
+}
 
 TBitField TBitField::operator|(const TBitField &bf) // операция "или"
 {
