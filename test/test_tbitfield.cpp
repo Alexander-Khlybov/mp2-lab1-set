@@ -289,3 +289,30 @@ TEST(TBitField, bitfields_with_different_bits_are_not_equal)
 
   EXPECT_NE(bf1, bf2);
 }
+
+TEST(TBitField, can_combine_several_bifields)
+{
+    int size = 7, size2 = 10, size3 = 5;
+    TBitField bf1(size), bf2(size2), bf3(size3), resBf(size2);
+
+    for (int i = 0; i < size2; i++)
+    {
+        if (i % 3 == 2)
+        {
+            bf2.SetBit(i);
+            resBf.SetBit(i);
+        }
+
+    }
+    for (int i = 0; i < size3; i++)
+    {
+        if (i % 2)
+        {
+            bf3.SetBit(i);
+            resBf.SetBit(i);
+        }
+    }
+    bf1.SetBit(0);
+    resBf.SetBit(0);
+    EXPECT_EQ(resBf, bf1 | bf2 | bf3);
+}
