@@ -304,6 +304,8 @@ TEST(TBitField, can_combine_several_bifields)
         }
 
     }
+    // bf2 = 0010010010
+    // resBf = 0010010010
     for (int i = 0; i < size3; i++)
     {
         if (i % 2)
@@ -312,7 +314,45 @@ TEST(TBitField, can_combine_several_bifields)
             resBf.SetBit(i);
         }
     }
+    // bf3 = 01010
+    // resBf = 0111010010
     bf1.SetBit(0);
+    // bf1 = 1000000
     resBf.SetBit(0);
+    // resBf = 1111010010
+
     EXPECT_EQ(resBf, bf1 | bf2 | bf3);
+}
+
+TEST(TBitField, operator_and_can_handle_multiple_bitfields)
+{
+    int size = 7, size2 = 10, size3 = 5;
+    TBitField bf1(size), bf2(size2), bf3(size3), resBf(size2);
+
+    for (int i = 0; i < size2; i++)
+    {
+        if (i % 3 == 2)
+        {
+            bf2.SetBit(i);
+        }
+
+    }
+    // bf2 = 0010010010
+    for (int i = 0; i < size3; i++)
+    {
+        if (i % 2)
+        {
+            bf3.SetBit(i);
+        }
+    }
+    bf3.SetBit(2);
+    // bf3 = 01110
+    bf1.SetBit(0);
+    bf1.SetBit(2);
+    bf1.SetBit(6);
+    // bf1 = 1010001
+    resBf.SetBit(2);
+    // resBf = 0010000000
+
+    EXPECT_EQ(resBf, bf1 & bf2 & bf3);
 }
