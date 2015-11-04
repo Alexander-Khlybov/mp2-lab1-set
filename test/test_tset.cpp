@@ -295,3 +295,31 @@ TEST(TSet, check_negation_operator)
 
   EXPECT_EQ(expSet, set1);
 }
+
+TEST(TSet, can_combine_several_sets)
+{
+    int size = 7, size2 = 10, size3 = 5;
+    TSet s1(size), s2(size2), s3(size3), resS(size2);
+
+    for (int i = 0; i < size2; i++)
+        if (i % 3 == 2)
+        {
+            s2.InsElem(i);
+            resS.InsElem(i);
+        }
+    //s2 = {2, 5, 8}
+    //resS = {2, 5, 8}
+    for (int i = 0; i < size3; i++)
+        if (i % 2)
+        {
+            s3.InsElem(i);
+            resS.InsElem(i);
+        }
+    //s3 = {1, 3}
+    //resS = {1, 2, 3, 5, 8}
+    s1.InsElem(0);
+    resS.InsElem(0);
+    //s1 = {0}
+    //resS = {0, 1, 2, 3, 5, 8}
+    EXPECT_EQ(resS, s1 + s2 + s3);
+}
